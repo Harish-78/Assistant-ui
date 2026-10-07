@@ -19,13 +19,13 @@ export function ModelSelector({
 }) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-1.5 shadow-2xs hover:bg-accent outline-none transition-colors">
-        <Cpu className="size-4 text-foreground" />
-        <span className="text-sm font-bold">{selectedModel.name}</span>
-        <Badge variant="outline" className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0 border-border text-foreground">
+      <DropdownMenuTrigger className="flex items-center gap-1.5 sm:gap-2 rounded-xl border border-border/40 bg-muted/20 px-2.5 sm:px-3 py-1.5 hover:bg-muted/40 outline-none transition-colors">
+        <Cpu className="size-3.5 sm:size-4 text-foreground" />
+        <span className="text-xs sm:text-sm font-bold">{selectedModel.name}</span>
+        <Badge variant="outline" className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider px-1.5 py-0 border-border/40 text-muted-foreground">
           {selectedModel.badge}
         </Badge>
-        <ChevronDown className="size-3 text-muted-foreground ml-1" />
+        <ChevronDown className="size-3 text-muted-foreground ml-0.5" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-56 border-border">
         {AVAILABLE_MODELS.map((model) => {

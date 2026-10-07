@@ -33,12 +33,12 @@ function App() {
         onNewChat={handleNewChat}
         onSelectThread={handleSelectThread}
       />
-      <SidebarInset>
+      <SidebarInset className="flex flex-col h-[100dvh] overflow-hidden">
         <AppHeader
           currentUser={currentUser}
           onOpenAuth={() => setIsAuthOpen(true)}
         />
-        <div className="flex flex-1 flex-col gap-2 p-0 sm:p-4 lg:gap-6 lg:p-6">
+        <div className="flex flex-1 flex-col p-0 sm:p-4 lg:p-6 min-h-0 overflow-hidden">
           <AssistantWorkspace key={activeThreadId} activeThreadId={activeThreadId} />
         </div>
       </SidebarInset>

@@ -60,10 +60,10 @@ export function AssistantMessageItem({
 
         {/* Thought Box for Assistant */}
         {message.role === "assistant" && message.thought && (
-          <div className="rounded-xl border border-border bg-muted/50 overflow-hidden transition-all duration-200">
+          <div className="rounded-xl border border-border/30 bg-muted/20 overflow-hidden transition-all duration-200">
             <button
               onClick={() => onToggleThought(message.id)}
-              className="w-full flex items-center justify-between px-3 py-2 text-xs font-medium text-foreground hover:bg-muted transition-colors"
+              className="w-full flex items-center justify-between px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               <div className="flex items-center gap-2">
                 <BrainCircuit className="size-3.5 text-foreground" />
@@ -76,7 +76,7 @@ export function AssistantMessageItem({
               )}
             </button>
             {isThoughtExpanded && (
-              <div className="px-3 pb-2.5 pt-1 text-xs text-muted-foreground font-mono border-t border-border leading-relaxed bg-background/50">
+              <div className="px-3 pb-2.5 pt-1 text-xs text-muted-foreground font-mono border-t border-border/30 leading-relaxed bg-background/30">
                 {message.thought}
               </div>
             )}
@@ -85,10 +85,10 @@ export function AssistantMessageItem({
 
         {/* Content Bubble */}
         <div
-          className={`rounded-2xl p-4 text-sm leading-relaxed border ${
+          className={`rounded-2xl p-3.5 sm:p-4 text-sm leading-relaxed ${
             message.role === "user"
-              ? "bg-primary text-primary-foreground border-primary font-normal rounded-tr-xs"
-              : "bg-card text-card-foreground border-border rounded-tl-xs"
+              ? "bg-primary text-primary-foreground font-normal rounded-tr-xs"
+              : "bg-muted/30 text-foreground rounded-tl-xs border border-border/30"
           }`}
         >
           <p className="whitespace-pre-wrap">{message.content}</p>
@@ -98,7 +98,7 @@ export function AssistantMessageItem({
 
           {/* Sources Section */}
           {message.sources && message.sources.length > 0 && (
-            <div className="mt-3 pt-3 border-t border-border flex flex-wrap gap-2 items-center text-xs">
+            <div className="mt-3 pt-2.5 border-t border-border/30 flex flex-wrap gap-2 items-center text-xs">
               <span className="text-muted-foreground font-medium flex items-center gap-1">
                 <Globe className="size-3" /> Sources:
               </span>
@@ -106,7 +106,7 @@ export function AssistantMessageItem({
                 <a
                   key={idx}
                   href={source.url}
-                  className="px-2 py-0.5 rounded-md bg-muted text-foreground hover:bg-accent transition-colors text-[11px] font-semibold border border-border"
+                  className="px-2 py-0.5 rounded-md bg-muted text-foreground hover:bg-accent transition-colors text-[11px] font-semibold"
                 >
                   {source.title}
                 </a>

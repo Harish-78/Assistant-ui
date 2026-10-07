@@ -8,7 +8,7 @@ export function PromptSuggestions({
   onSelectPrompt: (promptText: string) => void
 }) {
   return (
-    <div className="px-3 sm:px-4 py-2.5 sm:py-3 border-t border-border bg-muted/20 shrink-0">
+    <div className="px-3 sm:px-4 py-2 sm:py-2.5 border-t border-border/30 bg-muted/10 shrink-0">
       <div className="text-[11px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 flex items-center gap-1.5">
         <Zap className="size-3.5 text-foreground" /> Suggested Prompts
       </div>
@@ -19,9 +19,9 @@ export function PromptSuggestions({
             <button
               key={idx}
               onClick={() => onSelectPrompt(item.title + ": " + item.desc)}
-              className="flex items-start gap-2.5 p-2 sm:p-2.5 rounded-xl border border-border bg-card hover:bg-accent text-left transition-all group active:scale-[0.99]"
+              className="flex items-start gap-2.5 p-2 sm:p-2.5 rounded-xl border border-border/40 bg-muted/20 hover:bg-muted/50 text-left transition-all group active:scale-[0.99]"
             >
-              <div className="p-1.5 rounded-lg border border-border bg-muted text-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
+              <div className="p-1.5 rounded-lg bg-background text-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
                 <Icon className="size-3.5 sm:size-4" />
               </div>
               <div className="min-w-0 flex-1">
