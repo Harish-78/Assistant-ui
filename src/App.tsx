@@ -38,7 +38,7 @@ function App() {
           currentUser={currentUser}
           onOpenAuth={() => setIsAuthOpen(true)}
         />
-        <div className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+        <div className="flex flex-1 flex-col gap-2 p-0 sm:p-4 lg:gap-6 lg:p-6">
           <AssistantWorkspace key={activeThreadId} activeThreadId={activeThreadId} />
         </div>
       </SidebarInset>

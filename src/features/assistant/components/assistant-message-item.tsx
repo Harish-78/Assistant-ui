@@ -34,17 +34,17 @@ export function AssistantMessageItem({
 }) {
   return (
     <div
-      className={`flex gap-3.5 ${message.role === "user" ? "justify-end" : "justify-start"}`}
+      className={`flex gap-2 sm:gap-3.5 ${message.role === "user" ? "justify-end" : "justify-start"}`}
     >
       {message.role === "assistant" && (
-        <Avatar className="size-9 border border-border bg-primary text-primary-foreground">
-          <AvatarFallback className="bg-primary text-primary-foreground font-bold text-xs">
-            <Bot className="size-5" />
+        <Avatar className="size-7 sm:size-9 border border-border bg-primary text-primary-foreground shrink-0 mt-0.5">
+          <AvatarFallback className="bg-primary text-primary-foreground font-bold text-[10px] sm:text-xs">
+            <Bot className="size-4 sm:size-5" />
           </AvatarFallback>
         </Avatar>
       )}
 
-      <div className="flex flex-col max-w-[85%] md:max-w-[75%] space-y-2">
+      <div className="flex flex-col max-w-[90%] sm:max-w-[85%] md:max-w-[75%] space-y-2 min-w-0">
         {/* Message Header */}
         <div
           className={`flex items-center gap-2 text-xs text-muted-foreground ${
@@ -145,9 +145,9 @@ export function AssistantMessageItem({
       </div>
 
       {message.role === "user" && (
-        <Avatar className="size-9 border border-border bg-muted">
-          <AvatarFallback className="bg-muted text-foreground font-bold text-xs">
-            <User className="size-4" />
+        <Avatar className="size-7 sm:size-9 border border-border bg-muted shrink-0 mt-0.5">
+          <AvatarFallback className="bg-muted text-foreground font-bold text-[10px] sm:text-xs">
+            <User className="size-3.5 sm:size-4" />
           </AvatarFallback>
         </Avatar>
       )}

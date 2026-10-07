@@ -105,65 +105,67 @@ export function AssistantWorkspace({
   }
 
   return (
-    <div className="flex flex-1 flex-col h-[calc(100vh-theme(spacing.16))] max-h-[900px] overflow-hidden rounded-2xl border border-border bg-background shadow-lg">
+    <div className="flex flex-1 flex-col h-[calc(100dvh-3.5rem)] sm:h-[calc(100vh-4rem)] max-h-[900px] overflow-hidden rounded-none sm:rounded-2xl border-x-0 sm:border border-border bg-background shadow-lg">
       {/* Top Bar / Model & Toolbar Header */}
-      <div className="flex items-center justify-between border-b border-border px-4 py-3 bg-muted/40">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-3 py-2.5 sm:px-4 sm:py-3 bg-muted/40 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3">
           <ModelSelector
             selectedModel={selectedModel}
             onSelectModel={setSelectedModel}
           />
 
           <div className="hidden sm:flex items-center gap-1.5 text-xs text-muted-foreground font-mono">
-            <span className="inline-block size-2 rounded-full bg-foreground" />
+            <span className="inline-block size-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>Ready</span>
           </div>
         </div>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto max-w-full pb-1 sm:pb-0">
           <Button
             variant={codeModeEnabled ? "secondary" : "ghost"}
             size="sm"
             onClick={() => setCodeModeEnabled(!codeModeEnabled)}
-            className={`h-8 gap-1.5 text-xs font-semibold ${
+            className={`h-7 sm:h-8 px-2 sm:px-3 gap-1 sm:gap-1.5 text-xs font-semibold shrink-0 ${
               codeModeEnabled ? "bg-primary text-primary-foreground hover:bg-primary/90" : ""
             }`}
           >
             <Code2 className="size-3.5" />
-            <span>Code Mode</span>
+            <span className="hidden xs:inline">Code</span>
+            <span className="hidden md:inline">Mode</span>
           </Button>
 
           <Button
             variant={webSearchEnabled ? "secondary" : "ghost"}
             size="sm"
             onClick={() => setWebSearchEnabled(!webSearchEnabled)}
-            className={`h-8 gap-1.5 text-xs font-semibold ${
+            className={`h-7 sm:h-8 px-2 sm:px-3 gap-1 sm:gap-1.5 text-xs font-semibold shrink-0 ${
               webSearchEnabled ? "bg-primary text-primary-foreground hover:bg-primary/90" : ""
             }`}
           >
             <Globe className="size-3.5" />
-            <span>Web Search</span>
+            <span className="hidden xs:inline">Web</span>
+            <span className="hidden md:inline">Search</span>
           </Button>
 
           <Button
             variant={deepReasoningEnabled ? "secondary" : "ghost"}
             size="sm"
             onClick={() => setDeepReasoningEnabled(!deepReasoningEnabled)}
-            className={`h-8 gap-1.5 text-xs font-semibold ${
+            className={`h-7 sm:h-8 px-2 sm:px-3 gap-1 sm:gap-1.5 text-xs font-semibold shrink-0 ${
               deepReasoningEnabled ? "bg-primary text-primary-foreground hover:bg-primary/90" : ""
             }`}
           >
             <BrainCircuit className="size-3.5" />
-            <span>Reasoning</span>
+            <span className="hidden sm:inline">Reasoning</span>
           </Button>
 
           <Button
             variant="ghost"
             size="sm"
             onClick={() => setMessages([INITIAL_MESSAGES[0]])}
-            className="h-8 text-xs text-muted-foreground hover:text-foreground"
+            className="h-7 sm:h-8 px-2 sm:px-2.5 text-xs text-muted-foreground hover:text-foreground shrink-0"
           >
-            Clear Chat
+            Clear
           </Button>
         </div>
       </div>

@@ -14,7 +14,7 @@ export function AssistantInputBar({
   onSend: (overrideInput?: string) => void
 }) {
   return (
-    <div className="p-3 md:p-4 border-t border-border bg-card">
+    <div className="p-2 sm:p-3 md:p-4 border-t border-border bg-card shrink-0">
       <form
         onSubmit={(e) => {
           e.preventDefault()
@@ -33,19 +33,19 @@ export function AssistantInputBar({
           }}
           placeholder="Ask AI Assistant anything, request code snippets, or analyze data..."
           rows={2}
-          className="w-full resize-none bg-transparent p-3 text-sm outline-none text-foreground placeholder:text-muted-foreground/70 font-sans"
+          className="w-full resize-none bg-transparent p-2.5 sm:p-3 text-base sm:text-sm outline-none text-foreground placeholder:text-muted-foreground/70 font-sans"
         />
 
         {/* Action Row inside Input */}
-        <div className="flex items-center justify-between p-2 border-t border-border bg-muted/30 rounded-b-xl">
-          <div className="flex items-center gap-1">
-            <Button type="button" variant="ghost" size="icon" className="size-8 text-muted-foreground hover:text-foreground">
+        <div className="flex items-center justify-between p-1.5 sm:p-2 border-t border-border bg-muted/30 rounded-b-xl gap-2">
+          <div className="flex items-center gap-0.5 sm:gap-1">
+            <Button type="button" variant="ghost" size="icon" className="size-7 sm:size-8 text-muted-foreground hover:text-foreground">
               <Paperclip className="size-4" />
             </Button>
-            <Button type="button" variant="ghost" size="icon" className="size-8 text-muted-foreground hover:text-foreground">
+            <Button type="button" variant="ghost" size="icon" className="size-7 sm:size-8 text-muted-foreground hover:text-foreground">
               <Code2 className="size-4" />
             </Button>
-            <Button type="button" variant="ghost" size="icon" className="size-8 text-muted-foreground hover:text-foreground">
+            <Button type="button" variant="ghost" size="icon" className="size-7 sm:size-8 text-muted-foreground hover:text-foreground">
               <Globe className="size-4" />
             </Button>
           </div>
@@ -58,7 +58,7 @@ export function AssistantInputBar({
               type="submit"
               disabled={!input.trim() || isGenerating}
               size="sm"
-              className="gap-1.5 rounded-lg px-3.5 h-8 bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs"
+              className="gap-1.5 rounded-lg px-3 sm:px-3.5 h-8 bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs shrink-0"
             >
               <span>Send</span>
               <Send className="size-3.5" />

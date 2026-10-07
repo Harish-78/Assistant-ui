@@ -34,7 +34,7 @@ export function CodeBlock({ snippet }: { snippet: CodeSnippet }) {
           )}
         </Button>
       </div>
-      <pre className="p-4 overflow-x-auto text-xs leading-relaxed text-zinc-200">
+      <pre className="p-3 sm:p-4 overflow-x-auto text-[11px] sm:text-xs leading-relaxed text-zinc-200 max-w-full font-mono">
         <code>{snippet.code}</code>
       </pre>
     </div>
